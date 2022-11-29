@@ -1,8 +1,19 @@
 xy = []
+condition = True
 
-n = int(input("Enter the number of polygon points: "))
 points = 0
 
+while condition:
+    try:
+        n = int(input("Enter the number of polygon points: "))
+        if n >= 3:
+            condition = False
+        else:
+            print("0, 1, and 2 points will not make a closed surface, please input again")
+    except:
+        print("That's not an integer please input again")
+
+print("\nRemember to input the points in their counterclockwise order!\n")
 while points < n:
     new = [float(xx) for xx in (input("Enter x and y value for point %i: " %(points+1))).split()]
     if len(new) == 2:
